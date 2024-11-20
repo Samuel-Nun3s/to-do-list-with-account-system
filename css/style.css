@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+/* Configurações gerais: */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --background: #F2D7B6 ;
+    --mainColor: #F2F2F2;
+    --fontColor: #8C694A;
+    --colorInput: #D9BFA0;
+    --colorbutton: #BF9169;
+}
+
+/* Configurações do body e main: */
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    color: var(--fontColor);
+}
+
+main {
+    width: 80vw;
+    max-width: 640px;
+    height: auto;
+    
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--mainColor);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Configurações otimizadas: */
+header,
+#add,
+#edit {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#button-add,
+.buttons-edit {
+    height: 40px;
+}
+
+/* Configurações do header: */
+header {
+    font-size: 19px;
+}
+
+/* Configurações da lista aonde aparecerão as tarefas: */
+#list {
+    padding: .4px 7px 7px 6.5px;
+    border-radius: 10px;
+    background-color: var(--background);
+}
+
+
+/* Configurações das tarefas: */
+.tasks {
+    width: auto;
+    height: 80px;
+    margin: auto;
+    margin-top: 7px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid var(--fontColor);
+    background-color: var(--mainColor);
+}
+
+.tasks h3 {
+    width: 20px;
+    display: inline;
+    position: relative;
+    top: 30px;
+    word-wrap: break-word;
+}
+
+/* Configurações dos botões da tarefa: */
+.buttons-task {
+    width: 40px;
+    height: 40px;
+    margin-right: 3px;
+    position: relative;
+    float: right;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+/* Configurações dos inputs:*/
+.input {
+    width: 200px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--colorInput);
+    padding: 10px;
+}
+
+/* Configurações dos botoões:*/
+.button {
+    border-radius: 10px;
+    border: 2px solid var(--fontColor);
+    background-color: var(--colorbutton);
+    opacity: .7;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+#button-add {
+    width: 100px;
+}
+
+.buttons-edit {
+    width: 70px;
+    translate: 0px 6px;
+}
+
+/* Configurações da classe hidden(que ira trocar entre o adicionar e o editar): */
+.hidden {
+    display: none;
+}
+
+.completed {
+    text-decoration: line-through 2px black;
+}
