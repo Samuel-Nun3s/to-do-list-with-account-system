@@ -146,7 +146,7 @@ function changeDisplay() {
 // Endpoint de Adição de novas tarefas:
 async function addTaskBD(taskObj) {
     try {
-        const response = await fetch('./api/add_task.php', {
+        const response = await fetch('././api/add_task.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(taskObj)
@@ -167,7 +167,7 @@ async function addTaskBD(taskObj) {
 // Endpoint de Coleta das tarefas armazenadas no banco:
 async function getTasks() {
     try {
-        const response = await fetch('./api/get_tasks.php');
+        const response = await fetch('././api/get_tasks.php');
 
         // Verifique se a resposta é válida
         if (!response.ok) {
@@ -205,7 +205,7 @@ async function loadDataBase() {
 // Endpoint de edição de tarefas criadas:
 async function updateTask(id, name, status) {
     try {
-        const response = await fetch('./api/update_task.php', {
+        const response = await fetch('././api/update_task.php', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify( {id, name, status} )
@@ -225,7 +225,7 @@ async function updateTask(id, name, status) {
 // Endpoint de Exclusão de tarefas:
 async function deleteTask(id) {
     try {
-        const response = await fetch('./api/delet_task.php', {
+        const response = await fetch('././api/delet_task.php', {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify( {id} )

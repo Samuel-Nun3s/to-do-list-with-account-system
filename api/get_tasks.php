@@ -1,6 +1,6 @@
 <?php
     // Coletar as tarefas do banco:
-    include_once '../config/database.php';
+    include_once 'config/database.php';
 
     $sql = "SELECT * FROM `tasks`";
     $stmt = $pdo -> prepare($sql);

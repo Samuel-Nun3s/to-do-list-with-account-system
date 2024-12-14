@@ -1,6 +1,6 @@
 <?php
     // Atualizar as tarefas do banco:
-    include_once '../config/database.php';
+    include_once 'config/database.php';
 
     header('Content-Type: application/json; charset=utf-8');
 
