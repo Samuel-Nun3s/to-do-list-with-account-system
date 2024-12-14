@@ -172,4 +172,4 @@ Este projeto é distribuido sob a licença MIT. Consulte o arquivo **LICENSE** p
 Se você tiver dúvidas ou sugestões, entre em contato:
 - Nome: Samuel Nunes
 - Email: samuel.n.c.nun3s@gmail.com
-- GitHub: Samuel-Nun3s 
+- GitHub: <a href="https://github.com/Samuel-Nun3s">Samuel-Nun3s</a>
