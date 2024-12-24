@@ -100,7 +100,8 @@ header {
 
 /* Configurações dos inputs:*/
 .input {
-    width: 250px;
+    width: 98%;
+    max-width: 260px;
     height: 40px;
     border-radius: 10px;
     border: none;
@@ -124,6 +125,7 @@ header {
 
 #button-add {
     width: 100px;
+    margin-top: 10px;
 }
 
 .buttons-edit {
@@ -138,4 +140,20 @@ header {
 
 .completed {
     text-decoration: line-through 2px black;
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        width: 90%;
+    }
+
+    .buttons-task {
+        width: 30px;
+        height: 30px;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
 }
