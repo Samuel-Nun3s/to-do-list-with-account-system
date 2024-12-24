@@ -1,0 +1,330 @@
+@import url('style.css');
+@import url('login-mobile.css');
+
+/* Main */
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    width: 80%;
+    max-width: 806px;
+    height: 50%;
+}
+
+/* Content */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    background-color: var(--colorInput);
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 9;
+
+    left: 0;
+}
+
+#register .second-column {
+    z-index: 11;
+}
+
+#login {
+    position: absolute;
+}
+
+#login .first-column {
+    order: 2;
+    z-index: -1;
+    opacity: 0;
+}
+
+#login .second-column {
+    order: 1;
+    z-index: -1;
+    opacity: 0;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-column{
+    border-radius: 10px 0px 0px 10px;
+    height: 100%;
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.second-column {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.input-login {
+    margin: 2.5px;
+}
+
+.button-login {
+    margin: 2.5px;
+    padding: 7px;
+}
+
+/* Sign-in-js */
+.sign-in-js #register .first-column,
+.sign-in-js #register .second-column {
+    opacity: 0;
+    z-index: -1;
+}
+
+.sign-in-js #login .second-column {
+    z-index: 11;
+    opacity: 1;
+}
+
+.sign-in-js #login .first-column {
+    z-index: 13;
+    opacity: 1;
+}
+
+.sign-in-js .content::before {
+    left: 60%;
+    border-radius: 0px 10px 10px 0px;
+    animation: slidein 1.3s;
+    z-index: 12;
+}
+
+/* Sign-up-js */
+.sign-up-js #login .first-column,
+.sign-up-js #login .second-column {
+    z-index: -1;
+}
+
+.sign-up-js #register .first-column {
+    z-index: 13;
+}
+
+.sign-up-js #register .second-column {
+    z-index: 11;
+}
+
+.sign-up-js .content::before {
+    z-index: 12;
+    animation: slideout 1.3s;
+}
+
+/* Shift content behind content::before */
+/* sign-in-js */
+.sign-in-js #register .second-column {
+    position: relative;
+    animation: displacementSignIn 1.3s;
+}
+
+.sign-in-js #register .first-column {
+    position: relative;
+    animation: signInText 1.3s;
+}
+
+/* sign-up-js */
+.sign-up-js #login .second-column {
+    position: relative;
+    animation: displacementSignUp 1.3s;
+}
+
+.sign-up-js #login .first-column {
+    position: relative;
+    animation: signUpText  1.3s;
+}
+
+/* Form/Text displacement animation */
+.sign-in-js #login .first-column,
+.sign-up-js #register .first-column {
+    animation: opacityText 4.5s;
+}
+
+.sign-in-js #login .second-column,
+.sign-up-js #register .second-column {
+    animation: opacityForm 4s;
+}
+
+/* Animation for form */
+@keyframes displacementSignIn {
+    from {
+        left: 0;
+        opacity: 1;
+    }
+
+    25% {
+        left: -80px;
+        opacity: .5;
+    }
+
+    50% {
+        left: -110px;
+        opacity: .2;
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+    }
+}
+
+@keyframes displacementSignUp {
+    from {
+        right: 0;
+        opacity: 1;
+    }
+
+    25% {
+        right: -80px;
+        opacity: .5;
+    }
+
+    50% {
+        right: -110px;
+        opacity: .2;
+    }
+
+    to {
+        right: -110px;
+        opacity: 0;
+    }
+}
+
+@keyframes opacityForm {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for text */
+@keyframes signInText {
+    from {
+        left: 0;
+        z-index: 13;
+        opacity: 1;
+    }
+
+    99% {
+        z-index: 13;
+    }
+
+    to {
+        left: 40%;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+@keyframes signUpText {
+    from {
+        right: 0;
+        opacity: 1;
+        z-index: 13;
+    }
+
+    99% {
+        z-index: 13;
+    }
+
+    to {
+        right: 40%;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes opacityText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for content::before */
+@keyframes slidein {
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout {
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
+}
