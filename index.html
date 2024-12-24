@@ -4,34 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login To-do list</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/login.js" defer></script>
 </head>
 <body>
-    <main>
-        <section id="login">
-            <form action="" method="post">
-                <div class="form-group">
-                    <input type="email" name="email" id="email">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" id="password">
-                </div>
-                <button>Registrar-se</button>
-                <button>Entrar</button>
-            </form>
+    <main id="container">
+        <section id="register" class="content">
+            <div class="first-column">
+                <h2>Bem-vindo de volta</h2>
+                <p>Aperte no botão abaixo para acessar sua conta.</p>
+                <button id="sign-in-button" class="button button-login">Entrar</button>
+            </div>
+            <div class="second-column">
+                <h2>Criar Conta</h2>
+                <form action="" method="post" class="form-login">
+                        <input type="email" name="register-email" id="register-email" class="input input-login" placeholder="Insira seu email">
+                        <input type="email" name="confirm-email" id="confirm-email" 
+                        class="input input-login" placeholder="Confirme seu email">
+                    
+                        <input type="password" name="register-passoword" id="register-passoword" class="input input-login" placeholder="Insira sua senha">
+                        <input type="password" name="confirm-password" id="confirm-password" class="input input-login" placeholder="Confirme sua senha">
+                    <button class="button button-login">Registrar</button>
+                </form>
+            </div>
         </section>
-        <section id="register">
-            <form action="" method="post">
-                <div class="form-group">
-                    <input type="email" name="register-email" id="register-email">
-                    <input type="email" name="confirm-email" id="confirm-email">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="register-passoword" id="register-passoword">
-                    <input type="password" name="confirm-password" id="confirm-password">
-                </div>
-                <button>Entrar</button>
-                <button>Registrar</button>
-            </form>
+        <section id="login" class="content">
+            <div class="second-column">
+                <h2>Login</h2>
+                <form action="" method="post" class="form-login">
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="input input-login" placeholder="Insira seu email...">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="input input-login" placeholder="insira sua senha...">
+                    </div>
+                    <button class="button button-login">Entrar</button>
+                </form>
+            </div>
+            <div class="first-column">
+                <h2>Olá, amigo</h2>
+                <p>Aperte no botão abaixo para criar sua conta.</p>
+                <button id="sign-up-button" class="button button-login">Cadastre-se</button>
+            </div>
         </section>
     </main>
 </body>
