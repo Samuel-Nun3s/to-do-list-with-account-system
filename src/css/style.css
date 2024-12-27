@@ -74,6 +74,7 @@ body {
 #nav-user a {
     text-decoration: none;
     color: black;
+    margin-right: 10px;
     opacity: .7;
 }
 
