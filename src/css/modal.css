@@ -30,7 +30,7 @@
     z-index: 12;
 }
 
-#modal-delete h3, span {
+#modal-delete > h3 span {
     color: #ff2020;
 }
 
