@@ -2,6 +2,8 @@
 
 @import url('login.css');
 @import url('login-mobile.css');
+@import url('profile.css');
+@import url('modal.css');
 
 /* Configurações gerais: */
 * {
@@ -27,6 +29,59 @@ body {
     color: var(--fontColor);
 }
 
+#nav-header {
+    width: 100vw;
+    background-color: var(--colorbutton);
+    box-shadow: 1px 1px 10px black;
+    color: black;
+}
+
+#navbar {
+    max-width: 800px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+#navbar span {
+    font-size: 40px;
+}
+
+#nav-title {
+    display: flex;
+}
+
+#nav-title h1 {
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -45%);
+}
+
+#nav-user {
+    display: flex;
+}
+
+#nav-user h3 {
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -25%);
+}
+
+#nav-user a {
+    text-decoration: none;
+    color: black;
+    opacity: .7;
+}
+
+#nav-user a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
 main {
     width: 80vw;
     max-width: 640px;
@@ -42,7 +97,7 @@ main {
 }
 
 /* Configurações otimizadas: */
-header,
+#title,
 #add,
 #edit {
     text-align: center;
@@ -55,7 +110,7 @@ header,
 }
 
 /* Configurações do header: */
-header {
+#title {
     font-size: 19px;
 }
 
@@ -143,6 +198,22 @@ header {
 }
 
 @media screen and (max-width: 500px) {
+    #navbar {
+        padding: 0px 10px;
+    }
+
+    #navbar span {
+        font-size: 25px;
+    }
+
+    #navbar h1 {
+        font-size: 20px;
+    }
+
+    #nav-user h3 {
+        font-size: 12px;
+    }
+
     main {
         width: 90%;
     }
