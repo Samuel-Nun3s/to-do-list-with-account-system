@@ -1,3 +1,4 @@
+<?php include "../validate.php" ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +7,7 @@
     <title>To-do List</title>
     <link rel="stylesheet" href="../src/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <script src="../src/js/script.js" defer></script>
+    <script type="module" src="../src/js/script.js" defer></script>
 </head>
 <body>
     <header id="nav-header">
@@ -25,8 +26,8 @@
                </span>
                 <h3>
                     Olá,
-                    <a href="#">Samuel Nunes</a>
-                    <a href="../index.html">Sair</a>
+                    <a href="profile.php" id="name-user"><?php echo $_SESSION['login'];?></a>
+                    <a href="../logout.php">Sair</a>
                 </h3>
             </div>
         </div>
@@ -38,7 +39,7 @@
         <section id="add">
             <form>
                 <input type="text" name="add-task" id="add-task" class="input" maxlength="22" placeholder="Nova tarefa...">
-                <input type="button" value="Adicionar" class="button" id="button-add" onclick="addTask()">
+                <input type="button" value="Adicionar" class="button" id="button-add">
             </form>
         </section>
         <section id="edit" class="hidden">
@@ -47,12 +48,12 @@
             </header>
             <form>
                 <input type="text" name="edit-task" id="edit-task" class="input" maxlength="22">
-                <button class="button buttons-edit" onclick="edit()" type="button">
+                <button class="button buttons-edit" id="button-edit" type="button">
                     <span class="material-symbols-outlined">
                         check
                     </span>
                 </button>
-                <button class="button buttons-edit" onclick="changeDisplay()" type="button">
+                <button class="button buttons-edit" id="button-display" type="button">
                     <span class="material-symbols-outlined">
                         close
                     </span>
