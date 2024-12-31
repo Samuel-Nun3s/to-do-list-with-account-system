@@ -1,4 +1,21 @@
-// 1 - Funcionamento Geral do TO-DO list:
+// 1 - Acionamento dos eventos de click:
+const buttonAdd = document.querySelector("#button-add");
+const buttonEdit = document.querySelector("#button-edit");
+const buttonDisplay = document.querySelector("#button-display");
+
+buttonAdd.addEventListener("click", function() {
+    addTask();
+})
+
+buttonEdit.addEventListener("click", function() {
+    edit();
+})
+
+buttonDisplay.addEventListener("click", function() {
+    changeDisplay();
+})
+
+// 2 - Funcionamento Geral do TO-DO list:
 let tasks = [];
 
 // Adicionando uma nova tarefa:
@@ -12,7 +29,7 @@ function addTask() {
         const taskObj = {
             id: Date.now(),
             name: title,
-            status: false
+            status: 0
         }
         
         tasks.push(taskObj); 
@@ -42,7 +59,9 @@ function createTask(taskObj) {
     let h3 = document.createElement("h3");
     h3.innerHTML = taskObj.name;
     if (taskObj.status) {
-        h3.style.textDecoration = "line-through";
+        h3.classList.add("completed");
+    } else {
+        h3.classList.remove("completed");
     }
 
     div.appendChild(h3);
@@ -82,8 +101,9 @@ document.addEventListener("DOMContentLoaded", function() {
     list.addEventListener("click", function(event) {
         let task = event.target.closest(".tasks");
         let taskId = task.getAttribute("data-id");
+        //console.log(taskId);
         
-        let taskIndex = tasks.findIndex(t => t.id === taskId);
+        let taskIndex = tasks.findIndex(t => t.id == taskId);
         console.log(taskIndex);
         if (taskIndex == -1) { // Verificando se a tarefa foi encontrada pelo id
             console.error("Tarefa não encontrada!");
@@ -94,6 +114,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const h3 = task.querySelector("h3");
             h3.classList.toggle("completed");
             tasks[taskIndex].status = h3.classList.contains("completed");
+            if (tasks[taskIndex].status) {
+                updateTask(taskId, tasks[taskIndex].name, true);
+            } else {
+                updateTask(taskId, tasks[taskIndex].name, false);
+            }
 
         } else if (event.target.closest(".cancel")) { // Caso o botão "cancel" tenha sido clicado
             tasks.splice(taskIndex, 1);
@@ -142,7 +167,7 @@ function changeDisplay() {
     list.classList.toggle("hidden");
 }
 
-// 2 - Conectando com a API para o armazenamento no banco:
+// 3 - Conectando com a API para o armazenamento no banco:
 // Endpoint de Adição de novas tarefas:
 async function addTaskBD(taskObj) {
     try {
