@@ -1,4 +1,4 @@
-<?php 
+<?php
     // Conectando o Banco de dados:
     $host = 'localhost';
     $db_name = 'api_todo';
