@@ -1,4 +1,5 @@
-<?php 
+<?php
+    include "../validate.php";
     // Adicionar novas tarefas ao banco:
     include_once 'config/database.php';
 
@@ -8,12 +9,14 @@
         $id = $data->id;
         $name = $data->name;
         $status = $data->status;
+        $userId = $_SESSION['newsession'];
 
-        $sql = "INSERT INTO `tasks` (`id`, `name`, `status`) VALUES (:id, :name, :status_task)";
+        $sql = "INSERT INTO `tasks` (`id`, `name`, `status`, `id-user`) VALUES (:id, :name, :status_task, :userId)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':status_task', $status);
+        $stmt->bindParam(':userId', $userId);
 
         if ($stmt -> execute()) {
             echo json_encode(["message" => "Tarefa adicionada com sucesso!"]);

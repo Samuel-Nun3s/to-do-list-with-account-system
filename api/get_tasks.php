@@ -1,11 +1,19 @@
 <?php
+    include "../validate.php";
     // Coletar as tarefas do banco:
     include_once 'config/database.php';
 
-    $sql = "SELECT * FROM `tasks`";
-    $stmt = $pdo -> prepare($sql);
-    $stmt -> execute();
+    $userId = $_SESSION['newsession'];
 
-    $tasks = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($tasks);
+    if ($userId) {
+        $sql = "SELECT * FROM `tasks` WHERE `id-user` = :userId";
+        $stmt = $pdo -> prepare($sql);
+        $stmt->bindParam(':userId', $userId);
+        $stmt->execute();
+
+        $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($tasks);
+    } else {
+        echo json_encode(["message" => "Falha ao coletar as tarefas"]);
+    }
 ?>

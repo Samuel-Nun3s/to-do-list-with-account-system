@@ -1,4 +1,5 @@
-<?php 
+<?php
+    include "../validate.php";
     // Deletar as tarefas do banco
     include_once 'config/database.php';
     

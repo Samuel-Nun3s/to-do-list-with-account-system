@@ -1,4 +1,5 @@
 <?php
+    include "../validate.php";
     // Atualizar as tarefas do banco:
     include_once 'config/database.php';
 
