@@ -128,7 +128,7 @@ main {
     width: auto;
     height: 80px;
     margin: auto;
-    margin-top: 7px;
+    margin: 7px;
     padding: 5px;
     border-radius: 10px;
     border: 2px solid var(--fontColor);
@@ -139,7 +139,7 @@ main {
     width: 20px;
     display: inline;
     position: relative;
-    top: 30px;
+    top: 36%;
     word-wrap: break-word;
 }
 

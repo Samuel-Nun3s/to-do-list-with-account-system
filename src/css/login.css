@@ -61,6 +61,12 @@
     flex-direction: column;
 }
 
+.span-register,
+#login-span {
+    color: #ff2020;
+    font-size: .7em;
+}
+
 .first-column{
     border-radius: 10px 0px 0px 10px;
     height: 100%;
